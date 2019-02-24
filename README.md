@@ -1,2 +1,2 @@
 # SICP
-SICP 연습장
+SICP(Structure and Interpretation of Computer Programs) Practice Code
