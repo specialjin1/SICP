@@ -1,0 +1,3 @@
+(define (pascal-triangle row depth)
+    (cond ((or (= row 1) (= depth 2) (= row depth)) 1)
+          ((+ (pascal-triangle (- row 1) (- depth 1)) (pascal-triangle row (- depth 1))))))
