@@ -1,0 +1,37 @@
+# Recursive Proc
+(define (expt b n)
+    (if (= b 0)
+        1
+        (* b (expt b (- n 1)))))
+
+# Iterative Proc
+(define (expt b n)
+    (expt-iter b n 1))
+
+(define (expt-iter b count product)
+    (if (= counter 0)
+        product
+        (expt-iter b (- count 1) (* b product))))
+
+# Reducing degree
+# if k is even, n^k = (((n^2)^2)....^2)
+# elif k is odd, n^k = n*(((n^2)^2)....^2)..)
+
+# Recursive Proc
+(define (fast-expt b n)
+    (cond ((= b 0) 1)
+          ((even? n) (square (fast-expt b (/ n 2))))
+          (else (* b (fast-expt b (- n 1))))))
+
+(define (square x) (* x x))
+
+(define (even? x) (= (/ x 2) 0))
+
+# Iterative Proc
+(define (fast-expt b n)
+    (fast-expt-iter b n 1))
+
+(define (fast-expt-iter b n product)
+    (cond ((= n 0) product)
+          ((even? n) (fast-expt-iter b (/ n 2) (square product)))
+          (else (fast-expt-iter b (- n 1) (* b product)))))
