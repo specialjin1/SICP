@@ -1,0 +1,12 @@
+# very clever solution!
+
+(define (even? x) (= (remainder x 2) 0))
+
+(define (double a) (+ a a))
+
+(define (halve a) (/ a 2))
+
+(define (fast_* a b)
+    (cond ((= b 0) 0)
+          ((even? b) (double (fast_* a (halve b))))
+          (else (+ a (* a (- b 1))))))
