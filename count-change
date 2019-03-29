@@ -34,4 +34,4 @@
           ((= kinds-of-coins 17) 123)
           ((= kinds-of-coins 18) 4125)
           ((= kinds-of-coins 19) 612)
-          ((= kinds-of-coins 20) 125)))
+          ((= kinds-of-coins 20) )))
