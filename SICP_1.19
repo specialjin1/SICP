@@ -1,0 +1,14 @@
+# (a1 b1) = ((p+q)a + qb)
+            (    qa + pb)
+
+  (a2 b2) = ((p+q)a1 + qb1)
+            (    qa1 + qb1) 을 이용하여 q'와 p'를 구할 것
+
+(define (fib n)
+    (fib-iter 1 0 0 1 n))
+
+(define (fib-iter a b p q count)
+    (define (square x) (* x x))
+    (cond ((= count 0) b)
+          ((even? count) (fib-iter a b (+ (square p) (square q)) (+ (square q) (* 2 p q)) (/ count 2)))
+          (else (fib-iter (+ (* b q) (* a q) (* a p)) (+ (* b p) (* a q)) p q (- count 1)))))
